@@ -1,6 +1,7 @@
 import axios, { Axios } from 'axios';
 import { useState } from 'react';
 import './App.css';
+import Recipe from './recipeTile/Recipe';
 
 function App() {
   const APP_ID = "eb46502d";
@@ -60,6 +61,16 @@ function App() {
 
         <input type="submit" value="Get Recipe" className="app__submit" />
       </form>
+
+      <div className='app__recipes'>
+        {
+          recipes.map((recipe) => {
+            return <Recipe
+              recipe={recipe}
+            ></Recipe>
+          })
+        }
+      </div>
 
     </div>
   );
